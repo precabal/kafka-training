@@ -1,5 +1,13 @@
 from kafka import KafkaProducer
-producer = KafkaProducer(bootstrap_servers='localhost:9093')
-for _ in range(10):
-	producer.send('testTopic3', b'some_message_bytes')
+
+producer = KafkaProducer(bootstrap_servers='localhost:9092')
+
+f = open('archivo.txt', 'r')
+
+producer.send('prueba1',  str(f.read()))
+
+# sudo apt-get install python-pip
+# sudo pip install kafka-python
+
+
 
